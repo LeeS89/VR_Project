@@ -1,5 +1,5 @@
-# ca-LeeS89
-ca-LeeS89 created by GitHub Classroom
+# VR_Project
+VR_Project created by Lee Slammon
 ## Description
 
 A Virtual Reality moon based game that utilizes the gesture and voice recognition capabilities of the Meta Quest 2. Players can move around freely by simply making a certain gesture and turning their head to rotate. Special commands can be executed by combining certain gestures with spoken words/phrases, i.e. holding out your hand and saying "Freeze" stops bullets shot at the player mid flight and fires them back at the enemy upon closing your hand again. That is just 1 example of the multiple gesture/voice combination commands available in game. Players can also use their trusty lightsaber to deflect incoming fire and slice enemies in half.
