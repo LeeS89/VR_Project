@@ -1,0 +1,8 @@
+
+=== Sun Sep  3 03:44:53 2023
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.nuget.newtonsoft-json@3.2.1
