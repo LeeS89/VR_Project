@@ -11,6 +11,62 @@ The enemies in the game utilize Unity's NavMesh system and are controlled by a F
 Each state inherits from a baseState class which contains shared functions required for each state
 
 - Chasing State: When an enemy "spots" the player this send an alert to the rest of that enemies group, and each agent enters the chasing state, hunting down the player and shooting on sight
+```
+private void ChasePlayer()
+    {
+        bool _checkValidPath = CheckPathValidity(GetClosestPointOnNavMesh(transform.position), playerPos);
+
+        if(!_checkValidPath )
+        {
+            BaseState newState = GetComponent<StationaryState>();
+            _stateController.RequestStateChange(newState);
+        }
+        else
+        {
+            _agent.stoppingDistance = 5.0f;
+            _agent.SetDestination(playerPos);
+        }
+
+        if (distToPlayer <= (_tempStopDistance - 1.0f))
+        {
+            if (_coroutine != null)
+            {
+                StopCoroutine(_coroutine);
+                _coroutine = null;
+                BaseState newState = GetComponent<BacktrackState>();
+                _stateController.RequestStateChange(newState);
+            }
+           
+        }
+
+        if (distToPlayer <= (_tempStopDistance + 0.1f))
+        {
+            if (_coroutine == null)
+            {
+                _coroutine = StartCoroutine(PlayerProximityDelay());
+            }       
+        }
+        else if (distToPlayer <= _runningDistance)
+        {
+            _animation.WalkingDistance();
+        }
+        else
+        {
+            _animation.RunningDistance();
+        }
+    
+    }
+
+    IEnumerator PlayerProximityDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        Debug.Log("Successful change");
+        _coroutine = null;
+        BaseState newState = GetComponent<StationaryState>();
+        _stateController.RequestStateChange(newState);
+    }
+```
 
 - Stationary State: When the enemy reaches the player, it stops chasing and enter its stationary state and continues shooting at the player. If the player moves, the agents enter the chasing state again
 
