@@ -3,7 +3,7 @@ VR_Project created by Lee Slammon
 ## Description
 
 A Virtual Reality moon based game that utilizes the gesture and voice recognition capabilities of the Meta Quest 2. Players can move around freely by simply making a certain gesture and turning their head to rotate. Special commands can be executed by combining certain gestures with spoken words/phrases, i.e. holding out your hand and saying "Freeze" stops bullets shot at the player mid flight and fires them back at the enemy upon closing your hand again. That is just 1 example of the multiple gesture/voice combination commands available in game. Players can also use their trusty lightsaber to deflect incoming fire and slice enemies in half.
-
+[You can view a short demo of the project by clicking here](https://tusmm-my.sharepoint.com/:v:/g/personal/a00287814_student_tus_ie/EdaekUXbmQlHuhQr8vo6KxYBLjlDqbM7qjOqAcLkPVHm5Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=Ua9f7e)
 ## Enemy AI Finite State Machine
 
 The enemies in the game utilize Unity's NavMesh system and are controlled by a Finite State MAchine which allows for clear and manageable transitions between their different states such as: Stationary, Chasing, Patrol, Backtracking and Death.
